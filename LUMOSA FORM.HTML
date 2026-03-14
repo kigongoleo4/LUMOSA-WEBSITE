@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lumosa Umu Cooperators Oath Form</title>
+
+<link rel="stylesheet" href="LUMOSAUMU.CSS">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* FORM DESIGN */
+
+:root {
+    --primary: #0b2c5f;
+    --gold: #c9a227;
+    --light: #f8f6f1;
+    --border: #d8d4c9;
+}
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: #eef1f5;
+}
+
+/* MAIN CONTAINER */
+
+.container {
+    position: relative;
+    max-width: 1000px;
+    margin: 40px auto;
+    background: white;
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+/* WATERMARK */
+
+.container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('LUMOSA.jpg') no-repeat center;
+    background-size: 60%;
+    opacity: 0.07;
+    z-index: 0;
+}
+
+.container > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* HEADER */
+
+.header {
+    text-align: center;
+    border-bottom: 4px solid var(--gold);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary);
+    margin: 0;
+}
+
+.header h2 {
+    color: var(--gold);
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* SECTIONS */
+
+.section {
+    margin-bottom: 35px;
+}
+
+.section-title {
+    background: var(--primary);
+    color: white;
+    padding: 10px 15px;
+    font-weight: 600;
+    border-left: 6px solid var(--gold);
+    margin-bottom: 20px;
+}
+
+/* GRID */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+/* OATH TEXT */
+
+.oath-text {
+    line-height: 1.8;
+}
+
+.oath-name {
+    border-bottom: 1px solid #000;
+    display: inline-block;
+    min-width: 250px;
+}
+
+.checkbox-group {
+    margin-top: 20px;
+    display: flex;
+    gap: 30px;
+}
+
+.footer-banner {
+    text-align: center;
+    margin-top: 40px;
+    padding: 15px;
+    background: var(--gold);
+    color: white;
+    font-weight: 600;
+    border-radius: 6px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.form-grid{
+grid-template-columns:1fr;
+}
+
+.full-width{
+grid-column:span 1;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header>
+
+<div class="navbar">
+
+<div class="logo-area">
+<img src="LUM PIC.jpg" class="logo">
+<h1>LUMOSA</h1>
+</div>
+
+<nav>
+<ul id="menu">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="leadership.html">Leadership</a></li>
+<li><a href="LUMOSA FORM.HTML">Forms</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="login.html">Login</a></li>
+
+</ul>
+</nav>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+</div>
+
+</header>
+
+
+<!-- FORM -->
+
+<div class="container">
+
+<div class="header">
+<h1>LUMOSA UMU REGION</h1>
+<h2>Official Cooperators Commissioning & Oath Form</h2>
+</div>
+
+
+<div class="section">
+<div class="section-title">SECTION I: PERSONAL INFORMATION</div>
+
+<div class="form-grid">
+
+<div class="form-group">
+<label>Full Name</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>Membership Number</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>Date of Birth</label>
+<input type="date">
+</div>
+
+<div class="form-group">
+<label>Gender</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>Region / Zone</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>Parish / Institution</label>
+<input type="text">
+</div>
+
+<div class="form-group full-width">
+<label>Contact (Phone / Email)</label>
+<input type="text">
+</div>
+
+</div>
+</div>
+
+
+<div class="section">
+<div class="section-title">SECTION III: SOLEMN OATH OF COMMITMENT</div>
+
+<div class="oath-text">
+
+I, <span class="oath-name"></span>, do solemnly swear before God Almighty and the Lumosa Umu Leadership that I will faithfully uphold the mission, vision and values of Lumosa Umu.
+
+</div>
+
+<div class="checkbox-group">
+
+<label><input type="checkbox"> Sworn by Oath</label>
+<label><input type="checkbox"> Solemn Affirmation</label>
+
+</div>
+
+</div>
+
+
+<div class="footer-banner">
+UNITY • FAITH • SERVICE • DEVELOPMENT
+</div>
+
+</div>
+
+
+<!-- WEBSITE FOOTER -->
+
+<footer>
+
+<p>© 2026 Lumosa Umu Region</p>
+
+</footer>
+
+<script src="LUMOSAUMU.js"></script>
+
+</body>
+</html>
