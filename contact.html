@@ -1,65 +1,257 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - Lumosa Umu</title>
 
-<title>Contact</title>
+<style>
+/* ================= GLOBAL ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
 
-<link rel="stylesheet" href="LUMOSAUMU.CSS">
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #333;
+    background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url("contact.jpg") no-repeat center/cover; /* Replace with your image */
+}
 
+/* ================= NAVBAR ================= */
+.header {
+    background: #0a2a66;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 40px;
+    border-radius: 50%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+.login-btn {
+    background: #ffd700;
+    color: #000 !important;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* MOBILE MENU */
+.menu-btn {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* ================= CONTACT PANEL ================= */
+.page {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 20px;
+}
+
+.contact-panel {
+    width: 100%;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    color: white;
+    text-align: center;
+}
+
+.contact-panel h2 {
+    margin-bottom: 20px;
+}
+
+.contact-panel form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-panel input,
+.contact-panel textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+.contact-panel button {
+    padding: 12px;
+    border: none;
+    background: #ffd700;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.contact-panel button:hover {
+    background: #e6b800;
+}
+
+/* MAP */
+.map {
+    margin-top: 20px;
+    width: 100%;
+    height: 250px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: #0a2a66;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+    nav ul {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #0a2a66;
+        flex-direction: column;
+        width: 200px;
+        display: none;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+}
+
+h2, h3, h4, p {
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+</style>
 </head>
 
 <body>
 
-<header>
+<!-- NAVBAR -->
+<header class="header">
+    <div class="navbar">
 
-<nav class="navbar">
+        <div class="logo-area">
+            <img src="LUM PIC.jpg" class="logo" alt="Lumosa Logo">
+            <h1>LUMOSA</h1>
+        </div>
 
-    <div class="nav-logo">
-        <img src="LUM PIC.jpg" alt="Lumosa Logo">
-        <span>Lumosa Umu</span>
+        <nav>
+            <ul id="menu">
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="Leadership.html">Leadership</a></li>
+                <li><a href="LUMOSA FORM.HTML">Forms</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="Contact.html" class="login-btn">Contact</a></li>
+                <li><a href="Login.html" class="login-btn">Login</a></li>
+            </ul>
+        </nav>
+
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
     </div>
-<nav>
-
-<ul id="menu">
-
-<li><a href="index.html">Home</a></li>
-<li><a href="leadership.html">Leadership</a></li>
-<li><a href="LUMOSA FORM.HTML">Forms</a></li>
-<li><a href="gallery.html">Gallery</a></li>
-<li><a href="contact.html">Contact</a></li>
-<li><a href="login.html">Login</a></li>
-
-</ul>
-
-</nav>
-
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
-
-</div>
-
 </header>
 
-
+<!-- CONTACT PANEL -->
 <section class="page">
+    <div class="contact-panel">
+        <h2>Contact Us</h2>
 
-<h2>Contact Us</h2>
+        <!-- CONTACT FORM -->
+        <form action="https://formspree.io/f/yourID" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
 
-<p>Email: lumosa@gmail.com</p>
-
-<p>Phone: +256 700000000</p>
-
+        <!-- GOOGLE MAP -->
+        <div class="map">
+            <iframe 
+            src="https://www.google.com/maps?q=Kalungu,Uganda&output=embed"
+            width="100%" height="100%" style="border:0;" allowfullscreen></iframe>
+        </div>
+    </div>
 </section>
 
+<!-- WHATSAPP BUTTON -->
+<a href="https://wa.me/256700000000" class="whatsapp" target="_blank">💬</a>
+
+<!-- FOOTER -->
 <footer>
-
-<p>© 2026 Lumosa Umu Region</p>
-
+    <p>© 2026 Lumosa Umu Region</p>
 </footer>
 
-<script src="LUMOSAUMU.js"></script>
+<script>
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show");
+}
+</script>
 
 </body>
 </html>
