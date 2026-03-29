@@ -1,70 +1,213 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery - Lumosa Umu</title>
 
-<title>Gallery</title>
+<style>
+/* ================= GLOBAL ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
 
-<link rel="stylesheet" href="LUMOSAUMU.CSS">
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url("your-background.jpg") no-repeat center/cover; /* Replace with your image */
+    color: white;
+}
 
+/* ================= NAVBAR ================= */
+.header {
+    background: #0a2a66;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 40px;
+    border-radius: 50%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+.login-btn {
+    background: #ffd700;
+    color: #000 !important;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* MOBILE MENU */
+.menu-btn {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* ================= PAGE CONTENT ================= */
+.page {
+    flex: 1;
+    padding: 40px;
+    margin: 30px auto;
+    width: 90%;
+    max-width: 1000px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+}
+
+.page h2 {
+    margin-bottom: 25px;
+}
+
+/* ================= GALLERY ================= */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* ================= FOOTER ================= */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #0a2a66;
+    color: white;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    nav ul {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #0a2a66;
+        flex-direction: column;
+        width: 200px;
+        display: none;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+}
+
+h2, h3, h4, p {
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+</style>
 </head>
 
 <body>
 
-<header>
+<!-- NAVBAR -->
+<header class="header">
+    <div class="navbar">
 
-<nav class="navbar">
+        <div class="logo-area">
+            <img src="LUM PIC.jpg" class="logo" alt="Lumosa Logo">
+            <h1>LUMOSA</h1>
+        </div>
 
-    <div class="nav-logo">
-        <img src="LUM PIC.jpg" alt="Lumosa Logo">
-        <span>Lumosa Umu</span>
+        <nav>
+            <ul id="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="leadership.html">Leadership</a></li>
+                <li><a href="LUMOSA FORM.HTML">Forms</a></li>
+                <li><a href="gallery.html" class="login-btn">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
     </div>
-<nav>
-
-<ul id="menu">
-
-<li><a href="index.html">Home</a></li>
-<li><a href="leadership.html">Leadership</a></li>
-<li><a href="LUMOSA FORM.HTML">Forms</a></li>
-<li><a href="gallery.html">Gallery</a></li>
-<li><a href="contact.html">Contact</a></li>
-<li><a href="login.html">Login</a></li>
-
-</ul>
-
-</nav>
-
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
-
-</div>
-
 </header>
 
-
+<!-- PAGE CONTENT -->
 <section class="page">
+    <h2>Gallery</h2>
 
-<h2>Gallery</h2>
-
-<div class="gallery">
-
-<img src="img1.jpg">
-<img src="img2.jpg">
-<img src="img3.jpg">
-<img src="img4.jpg">
-
-</div>
-
+    <div class="gallery">
+        <img src="all.jpg" alt="Image 1">
+        <img src="cop.jpg" alt="Image 2">
+        <img src="fd.jpg" alt="Image 3">
+        <img src="cz.jpg" alt="Image 4">
+        <img src="hbt.jpg" alt="Image 5">
+        <img src="img2.jpg" alt="Image 6">
+        <img src="img3.jpg" alt="Image 7">
+        <img src="img4.jpg" alt="Image 8">
+    </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-
-<p>© 2026 Lumosa Umu Region</p>
-
+    <p>© 2026 Lumosa Umu Region</p>
 </footer>
 
-<script src="LUMOSAUMU.js"></script>
+<!-- SCRIPT -->
+<script>
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show");
+}
+</script>
 
 </body>
 </html>
