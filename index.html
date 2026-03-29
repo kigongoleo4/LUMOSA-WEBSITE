@@ -1,146 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Lumosa Umu Region</title>
 
-<link rel="stylesheet" href="LUMOSAUMU.CSS">
+<style>
 
+/* ================= GLOBAL ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #333;
+}
+
+/* ================= NAVBAR ================= */
+.header {
+    background: #0a2a66;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 40px;
+    border-radius: 50%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+.login-btn {
+    background: #ffd700;
+    color: #000 !important;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* MOBILE MENU */
+.menu-btn {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* ================= MAIN BACKGROUND ================= */
+main {
+    flex: 1;
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+                url("LUMOSA IMAGE.jpeg") no-repeat center/cover;
+}
+
+
+/* ================= HERO ================= */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-text {
+    text-align: center;
+    color: #fff;
+}
+
+.hero-text h2 {
+    font-size: 2.5rem;
+}
+
+.hero-text p {
+    margin: 15px 0;
+    font-size: 1.2rem;
+}
+
+.cta-btn {
+    background: #ffd700;
+    color: #000;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* ================= SECTIONS ================= */
+.about, .cards, .news {
+    margin: 20px;
+    padding: 40px 20px;
+    text-align: center;
+    color: #fff;
+
+}
+
+/* ================= CARDS ================= */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 20px;
+    width: 260px;
+    border-radius: 12px;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* ================= NEWS ================= */
+.news-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.news-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(6px);
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+    color: #fff;
+    border-left: 3px solid #ffd700;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: #0a2a66;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+    nav ul {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #0a2a66;
+        flex-direction: column;
+        width: 200px;
+        display: none;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .hero-text h2 {
+        font-size: 1.8rem;
+    }
+}
+h2, h3, h4, p {
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+</style>
 </head>
 
 <body>
 
 <!-- NAVBAR -->
+<header class="header">
+    <div class="navbar">
 
-<header>
+        <div class="logo-area">
+            <img src="LUM PIC.jpg" class="logo">
+            <h1>LUMOSA</h1>
+        </div>
 
-<div class="navbar">
+        <nav>
+            <ul id="menu">
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="Leadership.html">Leadership</a></li>
+                <li><a href="LUMOSA FORM.HTML">Forms</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="Login.html" class="login-btn">Login</a></li>
+            </ul>
+        </nav>
 
-<div class="logo-area">
-<img src="LUM PIC.jpg" class="logo">
-<h1>LUMOSA</h1>
-</div>
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
-<nav>
-<ul id="menu">
-
-<li><a href="index.html">Home</a></li>
-<li><a href="leadership.html">Leadership</a></li>
-<li><a href="LUMOSA FORM.HTML">Forms</a></li>
-<li><a href="gallery.html">Gallery</a></li>
-<li><a href="contact.html">Contact</a></li>
-<li><a href="login.html">Login</a></li>
-
-</ul>
-</nav>
-
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
-
-</div>
-
+    </div>
 </header>
 
+<!-- MAIN CONTENT -->
+<main>
 
-<!-- HERO SLIDER -->
-
+<!-- HERO -->
 <section class="hero">
-
-<div class="slide active"></div>
-<div class="slide"></div>
-<div class="slide"></div>
-
-<div class="hero-text">
-
-<h2>Welcome to Lumosa Umu Region</h2>
-
-<p>Unity • Faith • Service • Development</p>
-
-<a href="forms.html">
-<button>Join Lumosa</button>
-</a>
-
-</div>
-
+    <div class="hero-text">
+        <h2>Welcome to Lumosa Umu Region</h2>
+        <p>Unity • Faith • Service • Development</p>
+        <a href="#" class="cta-btn">Join Lumosa</a>
+    </div>
 </section>
-
 
 <!-- ABOUT -->
-
 <section class="about">
-
-<h2>About Lumosa</h2>
-
-<p>
-Lumosa Umu Region promotes unity, leadership,
-community service and cultural development among members.
-</p>
-
+    <h2>About Lumosa</h2>
+    <p>
+        Lumosa Umu Region promotes unity, leadership, community service,
+        and cultural development among members.
+    </p>
 </section>
-
 
 <!-- CARDS -->
-
 <section class="cards">
+    <div class="card">
+        <h3>Mission</h3>
+        <p>Promoting unity and development among members.</p>
+    </div>
 
-<div class="card">
-<h3>Mission</h3>
-<p>Promoting unity and development among members.</p>
-</div>
+    <div class="card">
+        <h3>Vision</h3>
+        <p>Building a strong, ethical,God fearing and sustainable Association.</p>
+    </div>
 
-<div class="card">
-<h3>Vision</h3>
-<p>Building a strong and empowered community.</p>
-</div>
-
-<div class="card">
-<h3>Values</h3>
-<p>Leadership, unity, cooperation and service.</p>
-</div>
-
+    <div class="card">
+        <h3>Values</h3>
+        <p>Leadership, unity, cooperation and service.</p>
+    </div>
 </section>
 
-
-<!-- ANNOUNCEMENTS -->
-
+<!-- NEWS -->
 <section class="news">
+    <h2>Latest Updates</h2>
 
-<h2>Latest Updates</h2>
+    <div class="news-container">
+        <div class="news-card">
+            <h4>Community Meeting</h4>
+            <p>Members are invited to the upcoming meeting.</p>
+        </div>
 
-<div class="news-container">
+        <div class="news-card">
+            <h4>Project Uprising</h4>
+            <p>Supporting and funding our projects.</p>
+        </div>
 
-<div class="news-card">
-<h4>Community Meeting</h4>
-<p>Members are invited to the upcoming Lumosa meeting.</p>
-</div>
-
-<div class="news-card">
-<h4>Cultural Festival</h4>
-<p>Lumosa members are supporting Buganda cultural festivals.</p>
-</div>
-
-<div class="news-card">
-<h4>Leadership Activities</h4>
-<p>Members are actively involved in leadership initiatives.</p>
-</div>
-
-</div>
-
+        <div class="news-card">
+            <h4>Leadership Activities</h4>
+            <p>Members are engaged in leadership initiatives.</p>
+        </div>
+    </div>
 </section>
 
+</main>
 
+<!-- FOOTER -->
 <footer>
-
-<p>© 2026 Lumosa Umu Region</p>
-
+    <p>© 2026 Lumosa Umu Region</p>
 </footer>
 
-
-<script src="LUMOSAUMU.js"></script>
+<!-- SCRIPT -->
+<script>
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show");
+}
+</script>
 
 </body>
-
 </html>
