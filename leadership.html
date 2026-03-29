@@ -1,81 +1,292 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Leadership</title>
+<title>Leadership | Lumosa Umu Region</title>
 
-<link rel="stylesheet" href="LUMOSAUMU.CSS">
+<style>
 
+/* ================= GLOBAL ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #f5f7fa;
+}
+
+/* ================= NAVBAR ================= */
+header {
+    background: #0a2a66;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+}
+
+/* LOGO AREA */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-logo img {
+    width: 40px; 
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.nav-logo span {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* NAV LINKS */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+/* MENU BUTTON */
+.menu-btn {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* ================= MAIN / BACKGROUND ================= */
+main {
+    flex: 1;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url("lead.jpg") no-repeat center/cover;
+    padding: 60px 20px;
+}
+
+/* ================= PAGE CONTENT ================= */
+.page {
+    text-align: center;
+    color: #fff;
+}
+
+.page h2 {
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+}
+
+/* ================= LEADER CARDS (VERTICAL) ================= */
+.leaders {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    width: 250px;
+    border-radius: 15px;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    transition: 0.3s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* LEADER IMAGE */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* LEADER INFO */
+.card h3 {
+    margin: 15px 0 5px 0;
+    font-size: 1.2rem;
+    color: #ffd700;
+}
+
+.card p {
+    font-size: 1rem;
+    padding: 0 10px 15px 10px;
+}
+
+/* HOVER EFFECT */
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: #0a2a66;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+/* ================= TEXT SHADOW ================= */
+h2, h3, p {
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    nav ul {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #0a2a66;
+        flex-direction: column;
+        width: 200px;
+        display: none;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .leaders {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
+<!-- ================= NAVBAR ================= -->
 <header>
+    <div class="navbar">
 
-<nav class="navbar">
+        <div class="nav-logo">
+            <img src="LUM PIC.jpg" alt="Lumosa Logo">
+            <span>Lumosa Umu</span>
+        </div>
 
-    <div class="nav-logo">
-        <img src="LUM PIC.jpg" alt="Lumosa Logo">
-        <span>Lumosa Umu</span>
+        <nav>
+            <ul id="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="leadership.html">Leadership</a></li>
+                <li><a href="LUMOSA FORM.HTML">Forms</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
     </div>
-
-<nav>
-
-<ul id="menu">
-
-<li><a href="index.html">Home</a></li>
-<li><a href="leadership.html">Leadership</a></li>
-<li><a href="LUMOSA FORM.HTML">Forms</a></li>
-<li><a href="gallery.html">Gallery</a></li>
-<li><a href="contact.html">Contact</a></li>
-<li><a href="login.html">Login</a></li>
-
-</ul>
-
-</nav>
-
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
-
-</div>
-
 </header>
 
+<!-- ================= MAIN CONTENT ================= -->
+<main>
 
 <section class="page">
 
-<h2>Leadership Team</h2>
+    <h2>Leadership Team</h2>
 
-<div class="leaders">
+    <div class="leaders">
 
-<div class="card">
-<h3>Chairperson</h3>
-<p>Name Here</p>
-</div>
+        <div class="card">
+            <img src="pres.jpg" alt="Chairperson">
+            <h3>Legion President</h3>
+            <p>Kafumbe Kevin Victor</p>
+        </div>
 
-<div class="card">
-<h3>Vice Chairperson</h3>
-<p>Name Here</p>
-</div>
+        <div class="card">
+            <img src="vice-chair.jpg" alt="Vice Chairperson">
+            <h3>Vice President</h3>
+            <p>Nsiimenta Martha</p>
+        </div>
 
-<div class="card">
-<h3>Secretary</h3>
-<p>Name Here</p>
-</div>
+        <div class="card">
+            <img src="secretary.jpg" alt="Secretary">
+            <h3>Secretary</h3>
+            <p>Kafumbe Francis Xavier</p>
+        </div>
 
-</div>
+        <div class="card">
+            <img src="finance.jpg" alt="Finance Officer">
+            <h3>Finance Officer</h3>
+            <p>Lwerere Adonia</p>
+        </div>
+
+        <div class="card">
+            <img src="health.jpg" alt="Health Coordinator">
+            <h3>Health Coordinator</h3>
+            <p>Kigongo Lawrence Leo</p>
+        </div>
+
+        <div class="card">
+            <img src="mobilizer.jpg" alt="Mobilizer">
+            <h3>Mobilizer</h3>
+            <p>Nassejje Madrine</p>
+        </div>
+
+        <div class="card">
+            <img src="Pius.jpg" alt="Project Manager">
+            <h3>Project Manager</h3>
+            <p>Kizito Pius</p>
+        </div>
+
+    </div>
 
 </section>
 
+</main>
+
+<!-- ================= FOOTER ================= -->
 <footer>
-
-<p>© 2026 Lumosa Umu Region</p>
-
+    <p>© 2026 Lumosa Umu Region</p>
 </footer>
 
-<script src="LUMOSAUMU.js"></script>
+<!-- ================= SCRIPT ================= -->
+<script>
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show");
+}
+</script>
 
 </body>
 </html>
