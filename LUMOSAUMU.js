@@ -26,3 +26,6 @@ slides[index].classList.add("active");
 }
 
 setInterval(slider,4000);
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show");
+}
